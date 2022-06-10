@@ -1,6 +1,7 @@
 import path from 'path';
 import glob from 'glob';
 import fs from 'fs-extra';
+import { HooksArray } from '@elderjs/elderjs';
 
 /**
  * Hooks! 
@@ -18,7 +19,7 @@ import fs from 'fs-extra';
  * 
  */
 
-const hooks = [
+const hooks: HooksArray = [
   // {
   //   hook: 'html',
   //   name: 'compressHtml',

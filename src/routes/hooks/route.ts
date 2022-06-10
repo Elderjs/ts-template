@@ -1,6 +1,8 @@
 import { hookInterface, hookEntityDefinitions } from '@elderjs/elderjs';
 
-export default {
+import { RouteOptions } from '@elderjs/elderjs';
+
+const route: RouteOptions = {
   all: async () => {
     // This example uses Elder.js source code to show how to dynamically create slugs for a route.
     // There's no special relation to hookInterface. The hookInterface is just a plain array of JS objects and
@@ -22,3 +24,4 @@ export default {
     return { hook, hookEntityDefinitions };
   },
 };
+export default route;

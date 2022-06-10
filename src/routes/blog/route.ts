@@ -1,4 +1,6 @@
-export default {
+import { RouteOptions } from '@elderjs/elderjs';
+
+const route: RouteOptions = {
   // WARNING: Here be dragons and magic of all sorts.
 
   // 'data' and 'all' for this route are populated by /plugins/elder-plugin/markdown/index.js
@@ -15,3 +17,5 @@ export default {
   all: () => [],
   permalink: '/:slug/',
 };
+
+export default route;

@@ -1,4 +1,6 @@
-export default {
+import { RouteOptions } from '@elderjs/elderjs';
+
+const route: RouteOptions = {
   // the all function returns an array of all of the 'request' objects of a route.
   // In this route, we're only returning one.
   // if all() is ommited, an array of [{slug: 'route-name'}] will be set.
@@ -41,3 +43,5 @@ export default {
   // template: 'Simple.svelte' // this is auto-detected.
   // layout: 'Layout.svelte' // this is auto-detected.
 };
+
+export default route;
