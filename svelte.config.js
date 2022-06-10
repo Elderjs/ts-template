@@ -1,10 +1,11 @@
-const sveltePreprocess = require('svelte-preprocess');
+import sveltePreprocess from 'svelte-preprocess';
+import autoprefixer from 'autoprefixer';
 
-module.exports = {
+export default {
   preprocess: [
     sveltePreprocess({
       postcss: {
-        plugins: [require('autoprefixer')],
+        plugins: [autoprefixer],
       },
       typescript: {
         tsconfigFile: './tsconfig.svelte.json',

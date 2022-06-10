@@ -106,4 +106,4 @@ const hooks = [
 
   // If you'd like to see specific examples of how to do things that you think could help improve the template please create a GH issue.
 ];
-module.exports = hooks;
+export default hooks;

@@ -1,10 +1,10 @@
-<script lang="ts">
+<script>
   import HookDetail from '../../components/HookDetail.svelte';
   import BlogTeaser from '../../components/BlogTeaser.svelte';
   import Clock from '../../components/Clock.svelte';
-  import type { TData } from './Types';
-  import { test } from './test';
-  export let data: TData;
+  // import type { TData } from './Types';
+  // import { test } from './test';
+  export let data;
   export let settings;
   export let helpers;
 
@@ -151,7 +151,7 @@
       <span class="code">.env</span> to your .gitignore now)
     </li>
     <li>
-      It will {test('reload')} that dev server when changes are detected including rebundling your Svelte templates.
+      It will {'reload'} that dev server when changes are detected including rebundling your Svelte templates.
     </li>
   </ol>
 

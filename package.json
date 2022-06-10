@@ -24,12 +24,12 @@
   },
   "type": "module",
   "engines": {
-    "node": ">= 12.10.0"
+    "node": ">= 14.10.0"
   },
   "dependencies": {
     "@elderjs/elderjs": "file:../elderjs",
-    "@elderjs/plugin-browser-reload": "^1.3.2",
-    "@elderjs/plugin-markdown": "^1.3.2",
+    "@elderjs/plugin-browser-reload": "file:../plugins/packages/browser-reload",
+    "@elderjs/plugin-markdown": "file:../plugins/packages/markdown",
     "body-parser": "^1.19.0",
     "compression": "^1.7.4",
     "cors": "^2.8.5",

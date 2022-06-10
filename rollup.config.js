@@ -1,5 +1,4 @@
-require('dotenv').config();
-
-const { getRollupConfig } = require('@elderjs/elderjs');
-const svelteConfig = require('./svelte.config');
-module.exports = [...getRollupConfig({ svelteConfig })];
+import 'dotenv/config';
+import { getRollupConfig } from '@elderjs/elderjs';
+import svelteConfig from './svelte.config';
+export default [...getRollupConfig({ svelteConfig })];
