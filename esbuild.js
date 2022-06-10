@@ -1,3 +1,3 @@
-const { esbuildBundler } = require('@elderjs/elderjs');
+import { esbuildBundler } from '@elderjs/elderjs';
 
 esbuildBundler();
