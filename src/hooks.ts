@@ -36,6 +36,7 @@ const hooks: HooksArray = [
   //     };
   //   },
   // },
+
   {
     hook: 'bootstrap',
     name: 'copyAssetsToPublic',

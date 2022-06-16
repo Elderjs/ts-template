@@ -25,11 +25,6 @@ module.exports = {
     '@elderjs/plugin-markdown': {
       routes: ['blog'],
     },
-    '@elderjs/plugin-browser-reload': {
-      // this reloads your browser when nodemon restarts your server.
-      port: 8080,
-      reload: true, // if you are having issues with reloading not working, change to true.
-    },
   },
   shortcodes: { closePattern: '}}', openPattern: '{{' },
 };
