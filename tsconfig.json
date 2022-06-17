@@ -15,7 +15,7 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-
+    "skipLibCheck": true,
     "traceResolution": false,
     "listEmittedFiles": false,
     "listFiles": false,
@@ -24,7 +24,8 @@
     "lib": ["es2019"],
     "types": ["node"],
     "typeRoots": ["node_modules/@types", "src/types"],
-    "preserveWatchOutput": true
+    "preserveWatchOutput": true,
+    "noEmit": true
   },
   "include": ["./src/**/*"],
   "exclude": ["node_modules/**", "build"],

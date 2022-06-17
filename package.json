@@ -13,13 +13,12 @@
     "clean": "node ./build/cleanPublic.js",
     "run:server": "NODE_ENV=production node --enable-source-maps ./build/server.js",
     "serve": "run-s clean build:copy build:ts build:rollup run:server",
-    "dev": "npm run watch:pre && npm run watch:watch",
-    "dev:rollup": "npm run watch:copy & npm run watch:ts & npm run watch:rollup",
-    "watch:watch": " npm run watch:copy & npm run watch:ts & npm run watch:esbuild",
-    "watch:pre": "npm run build:copy && npm run build:ts",
-    "watch:esbuild": "node --enable-source-maps esbuild",
-    "watch:copy": "cpx \"src/**/*.!(ts)\" build --watch",
-    "watch:ts": "tsc -p tsconfig.json -w ",
+    "dev": "npm run watch:watch",
+    "watch:watch": "run-p watch:ts watch:type-check watch:serve",
+    "watch:pre": "npm run build:ts",
+    "watch:serve": "node --enable-source-maps ./build/server.js",
+    "watch:ts": "nodemon",
+    "watch:type-check": "tsc -p tsconfig.json -w",
     "watch:rollup": "rollup -c -w --no-watch.clearScreen",
     "ts": "nodemon"
   },
@@ -28,7 +27,7 @@
     "node": ">= 14.10.0"
   },
   "dependencies": {
-    "@elderjs/elderjs": "file:../elderjs",
+    "@elderjs/elderjs": "1.8.0-beta.1",
     "@elderjs/plugin-browser-reload": "file:../plugins/packages/browser-reload",
     "@elderjs/plugin-markdown": "file:../plugins/packages/markdown",
     "body-parser": "^1.19.0",
