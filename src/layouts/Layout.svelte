@@ -1,5 +1,6 @@
 <script>
-  import style from '../../assets/style.css';
+  import style from '../../node_modules/water.css/out/light.min.css';
+  import microtip from '../../node_modules/microtip/microtip.css';
   export let templateHtml;
 </script>
 
@@ -7,16 +8,7 @@
   :global(h1) {
     font-style: italic;
   }
-  .container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 1rem;
-  }
 
-  :root {
-    --balloon-color: #06395a;
-    --balloon-font-size: 14px;
-  }
   .footer {
     padding: 2rem 0;
     background: #06395a;
@@ -30,15 +22,35 @@
   .footer a {
     color: #f4f7fb;
   }
+
   :global(ul li),
   :global(ol li) {
     margin-bottom: 0.3rem;
   }
+
+  .code,
+  code {
+    padding: 0 0.25rem;
+    border-radius: 3px;
+    margin-right: 0.5rem;
+    font-family: monospace;
+    display: inline-block;
+  }
+
+  :global(h2) {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+  }
+
+  :root {
+    --background: #2e3440ff;
+    --code: #ddd;
+  }
 </style>
 
 <svelte:head>
-  <!-- You can remove this balloon it is just for hover effects -->
-  <link rel="stylesheet" href="https://unpkg.com/balloon-css/balloon.min.css" />
   <script>
     document.addEventListener('ejs', (e) => {
       console.log('Layout.svelte > Component Mount Detail', e.detail);

@@ -1,3 +1,6 @@
+import { ShortcodeDefinitions } from '@elderjs/elderjs';
+import { hookInterface, hookEntityDefinitions } from '@elderjs/elderjs';
+
 /**
  * Shortcodes are a useful way of making content that lives in a CMS or in markdown files dynamic.
  *
@@ -7,7 +10,7 @@
  *
  */
 
-export default [
+const shortcodes: ShortcodeDefinitions = [
   {
     /**
      * This is a simple shortcode that will wrap content with a magical box.
@@ -47,15 +50,44 @@ export default [
    * `node-fetch` to hit Instagram's API and specify what html, css, js you'd like to add to the page.
    *
    * */
+  {
+    shortcode: 'blogIndex',
+    run: async ({ data, helpers, props }) => {
+      const entries = data.markdown.blog.reduce((out, cv) => {
+        const html = `
+        <li>
+            <a href="${helpers.permalinks.blog(cv)}">${cv.frontmatter.title}</a>
+        </li>`;
+        return out + html;
+      }, '');
+
+      return `
+      <h2>${props.heading ? props.heading : 'Articles: '}</h2>
+      <ul>${entries}</ul>
+      `;
+    },
+  },
+  {
+    shortcode: 'displayHooks',
+    run: async ({ helpers, props }) => {
+      return helpers.inlineSvelteComponent({
+        name: 'DisplayHooks',
+        props: {
+          ...props,
+          hookEntityDefinitions,
+          hookInterface: props.hook ? hookInterface.filter((h) => h.hook === props.hook) : hookInterface,
+        },
+      });
+    },
+  },
 
   {
     shortcode: 'numberOfPages',
     run: async ({ allRequests }) => {
       // allRequests represents 'request' objects for all of the pages of our site, if we know the length of that we know the length of our site.
-      return {
-        html: allRequests.length,
-        // other values can be omitted.
-      };
+      return `${allRequests.length}`;
     },
   },
 ];
+
+export default shortcodes;

@@ -11,7 +11,7 @@ const route: RouteOptions = {
 
   data: {},
   all: () => [],
-  permalink: ({ request }) => (request.slug === '/' ? '/' : `/${request.slug}/`),
+  permalink: '/advanced/:slug/',
 };
 
 export default route;

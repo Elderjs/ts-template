@@ -1,6 +1,7 @@
 <script>
   export let request;
   export let settings;
+  export let data;
 </script>
 
 <svelte:head>
@@ -15,4 +16,5 @@ requests.
 <ul>
   <li>foo: {request.foo}</li>
   <li>bar: {request.bar}</li>
+  <li>search: {data.search}</li>
 </ul>

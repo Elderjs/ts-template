@@ -7,6 +7,12 @@ author: Nick Reese
 
 Sweet! So you've got the Elder.js starter template up and running. What's next?
 
+test
+
+huge diff
+
+wtf
+
 ## 4 Routes To Explore
 
 This project is structured to follow the required Elder.js folder structure which you can see below, but in short you've got several routes in the `./src/routes/` folder.
@@ -103,39 +109,6 @@ In this hook we're just adding our analytics code at a priority of 1 (last).
 
 If stacks seem foreign, just remember they are a list of strings with some meta data.
 
-### Hooks In Depth:
-
-Elder.js runs it's hooks system based on it's 'hookInterface'. This interface defines which hooks can do what and what properties they have.
-
-In building Elder.js we found that if anything can be mutated at anytime, a system quickly gets hard to reason about.
-
-The 'hookInterface' is designed to solve that problem. While you can explore all of the hooks on the homepage, before you go try adding a malicious hook that is designed to corrupt important data during page load.
-
-Add the hook below to your `hooks.js` file and reload this page:
-
-```javascript
-{
- hook: 'data',
- name: 'maliciousHook',
- description: 'Can we break anything?',
- priority: 1, // this will be called last
- run: async ({ helpers, data, settings, request, query }) => {
-   settings = null;
-   request = null;
-   helpers = null;
-   query = null;
-
-   return { settings, request, query, helpers }
- },
-},
-```
-
-On reload, if you check the console you'll see that this hook wasn't able to mutate any of the props due to the way the hookInterface is configured.
-
-Essentially only properties that are able to be mutated on a hook, will be mutated on the hook. This helps keep plugins and developers honest and makes maintaining the project in the future easier to reason about. :)
-
-If you're interested in exploring hooks more check out the full <a href="https://elderguide.com/tech/elderjs/">Elder.js documentation on ElderGuide</a>.
-
 ### A Brief Look At Shortcodes
 
 Shortcodes are a great way to customize otherwise static content. They are especially useful when using a CMS or external content store. The most common use cases include:
@@ -209,14 +182,6 @@ If you are looking to deploy your statically generated Elder.js site [Cloudflare
 ## Customizing The CSS:
 
 For this template any css in the `./src/layouts/Layout.svelte` will be made available on all pages. You can also import CSS like we do with the css file at `./assets/style.css` and that will get added to the CSS file Elder.js generates.
-
-## SSR and Dynamic Experiences:
-
-Elder.js started as a static site generator but today it is used in production as an SSR framework as well.
-
-For more information look at the route found in `./src/routes/ssr/`. In short, the `req` and `next` functions from `express` or `polka` (used in this template) are made available there. This means you'll have access to `sessions` and anything else you'd need to make logged in or otherwise dynamic experiences.
-
-For even more control make sure to checkout the [`middleware`](/middleware/) hook.
 
 ## Copying of Assets
 

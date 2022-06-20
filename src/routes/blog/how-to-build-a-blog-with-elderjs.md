@@ -43,3 +43,9 @@ Customizing your design is up to you, but in general if you're comfortable with 
 ## What's Next?
 
 If you're interested in further exploring how this template is working, continue reading the <a href="/getting-started/">guide on getting started with Elder.js</a>.
+
+## Blog Index
+
+{{blogIndex /}}
+
+{{displayHooks /}}

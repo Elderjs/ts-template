@@ -2,7 +2,7 @@
 title: 'Is Elder.js Right For You?'
 excerpt: 'What types of sites can you build with Elder.js? Can I use it for ______? Find out here.'
 author: Nick Reese
-# slug: common-uses-for-elderjs
+date: '2020-03-19T05:35:07.322Z'
 ---
 
 Elder.js was built as a static site generator (SSG) but was developed into a full server side rendering (SSR) framework.

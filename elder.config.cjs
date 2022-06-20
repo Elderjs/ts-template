@@ -22,7 +22,8 @@ module.exports = {
   },
   plugins: {
     '@elderjs/plugin-markdown': {
-      routes: ['blog'],
+      routes: ['blog', 'advanced'],
+      useSyntaxHighlighting: true,
     },
   },
 
