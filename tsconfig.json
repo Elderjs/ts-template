@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
     "incremental": true,
-    "target": "ES2019",
+    "target": "ES2020",
     "outDir": "build",
+    "rootDir": "src",
     "moduleResolution": "node",
     "module": "esnext",
     "declaration": true,
@@ -11,17 +12,19 @@
     "resolveJsonModule": true,
     "preserveValueImports": false,
 
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
+    "noImplicitAny": false,
+    "strictFunctionTypes": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noImplicitReturns": false,
     "noFallthroughCasesInSwitch": true,
-    "skipLibCheck": true,
     "traceResolution": false,
     "listEmittedFiles": false,
     "listFiles": false,
     "pretty": true,
     "allowJs": true,
-    "lib": ["es2019"],
+    "skipLibCheck": true,
+    "lib": ["es2020", "DOM"],
     "types": ["node"],
     "typeRoots": ["node_modules/@types", "src/types"],
     "preserveWatchOutput": true,
@@ -29,5 +32,6 @@
   },
   "include": ["./src/**/*"],
   "exclude": ["node_modules/**", "build"],
-  "compileOnSave": false
+  "compileOnSave": false,
+  "forceConsistentCasingInFileNames": true
 }

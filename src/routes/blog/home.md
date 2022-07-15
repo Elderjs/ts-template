@@ -59,3 +59,11 @@ Production sites of this sort that Nick publicly discloses include:
 Elder.js has been used in production for 2 years on various sites and will be maintained for the foreseeable future (at least until late 2024).
 
 How Elder.js compares to SvelteKit is a very common question. The key distinction is that Elder.js is designed with SEO in mind and offers tools to help make building large static sites easier.
+
+## What Is Partial Hydration?
+
+So here is an update.
+
+{{svelteComponent name='Clock' props='{}' options='{}'/}}
+
+Another change
