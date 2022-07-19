@@ -5,10 +5,11 @@
   "main": "./build/build.js",
   "scripts": {
     "start": "npm run dev",
-    "build": "run-s build:ts clean build:type-check build:html",
+    "build": "run-s build:etsc build:ts clean build:type-check build:html",
     "build:type-check": "tsc -p tsconfig.json",
     "build:ts": "tsc -p tsconfig.json ",
     "build:html": "node --enable-source-maps ./build/build.js",
+    "build:etsc": "etsc --config=etsc.config.cjs",
     "clean": "node ./build/cleanPublic.js",
     "run:server": "NODE_ENV=production node --enable-source-maps ./build/server.js",
     "serve": "run-s build:ts clean build:typecheck run:server",
