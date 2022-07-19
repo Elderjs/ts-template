@@ -5,8 +5,7 @@
   "main": "./build/build.js",
   "scripts": {
     "start": "run-s dev",
-    "build": "run-s build:etsc build:ts clean build:type-check build:html",
-    "build:type-check": "tsc -p tsconfig.json",
+    "build": "run-s build:etsc build:ts clean build:html",
     "build:ts": "tsc -p tsconfig.json ",
     "build:html": "node --enable-source-maps ./build/build.js",
     "build:etsc": "etsc --config=etsc.config.cjs",
