@@ -4,7 +4,7 @@
   "description": "This is a project template for [Elder.js](https://elderguide.com/tech/elderjs/) apps. The template lives at https://github.com/elderjs/template and the Elder.js source is here: https://github.com/elderjs/elderjs",
   "main": "./build/build.js",
   "scripts": {
-    "start": "npm run dev",
+    "start": "run-s dev",
     "build": "run-s build:etsc build:ts clean build:type-check build:html",
     "build:type-check": "tsc -p tsconfig.json",
     "build:ts": "tsc -p tsconfig.json ",
@@ -13,7 +13,7 @@
     "clean": "node ./build/cleanPublic.js",
     "run:server": "NODE_ENV=production node --enable-source-maps ./build/server.js",
     "serve": "run-s build:ts clean build:typecheck run:server",
-    "dev": "npm run watch:watch",
+    "dev": "run-s build:etsc watch:watch",
     "watch:watch": "run-p watch:ts watch:type-check watch:serve",
     "watch:serve": "node --enable-source-maps ./build/server.js",
     "watch:ts": "nodemon",
