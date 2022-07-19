@@ -17,7 +17,6 @@
     "watch:serve": "node --enable-source-maps ./build/server.js",
     "watch:ts": "nodemon",
     "watch:type-check": "tsc -p tsconfig.json -w",
-    "watch:rollup": "rollup -c -w --no-watch.clearScreen",
     "ts": "nodemon"
   },
   "type": "module",
@@ -25,7 +24,7 @@
     "node": ">= 14.10.0"
   },
   "dependencies": {
-    "@elderjs/elderjs": "1.8.0-beta.8",
+    "@elderjs/elderjs": "1.8.0-beta.10",
     "@elderjs/plugin-markdown": "1.8.0-beta.7",
     "body-parser": "^1.19.0",
     "compression": "^1.7.4",
@@ -33,7 +32,7 @@
     "del": "^6.0.0",
     "dotenv": "^8.2.0",
     "fs-extra": "^9.1.0",
-    "glob": "^7.1.6",
+    "fast-glob": "^3.2.11",
     "microtip": "^0.2.2",
     "polka": "^0.5.2",
     "sirv": "^1.0.11",
