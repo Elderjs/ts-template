@@ -10,9 +10,9 @@ const config: UserOptions = {
   rootDir: process.cwd(),
   prefix: '', // If you want your site to be built within a sub folder within your `distDir` you can use this.
   props: {
-    hydration: 'hybrid',
-    compress: false,
-    replacementChars: '$abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
+    hydration: 'hybrid', // whether a file should be written for hydration JSON or not.
+    compress: false, // compresses the props. Saves ~8% over brotli on large JSON objects.
+    replacementChars: '$abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', // used to build a custom library for each page if props.compress is set to true.
   },
   debug: {
     stacks: false, // output details of the stack consolidation process.

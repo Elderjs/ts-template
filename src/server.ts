@@ -22,6 +22,10 @@ elder.bootstrap().then(() => {
     if (err) {
       console.log(err);
     }
-    console.log(`> Elder.js running on http://localhost:${SERVER_PORT}`);
+    console.log(
+      `> Running on http://localhost:${SERVER_PORT}${
+        elder.settings.server && elder.settings.server.prefix ? elder.settings.server.prefix : ''
+      }/`,
+    );
   });
 });
