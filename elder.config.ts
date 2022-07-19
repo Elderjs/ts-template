@@ -32,6 +32,7 @@ const config: UserOptions = {
       useSyntaxHighlighting: true,
     },
   },
+  replacements: {}, // used to replace variables in your svelte templates at bundle time.
 
   shortcodes: { closePattern: '}}', openPattern: '{{' },
 };
