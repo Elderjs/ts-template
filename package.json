@@ -5,19 +5,21 @@
   "main": "./build/build.js",
   "scripts": {
     "start": "run-s dev",
-    "build": "run-s build:ts clean build:type-check build:html",
+    "build": "run-s built:tailwind build:ts clean build:type-check build:html",
     "build:ts": "etsc --config=etsc.config.cjs",
     "build:html": "node --enable-source-maps ./build/build.js",
     "build:type-check": "tsc -p tsconfig.json",
+    "build:tailwind": "tailwindcss -c ./tailwind.config.cjs -i ./src/tailwind.css -o ./public/tailwind.css --minify  --postcss ./postcss.config.cjs ",
     "clean": "node ./build/cleanPublic.js",
     "run:server": "NODE_ENV=production node --enable-source-maps ./build/server.js",
     "serve": "run-s build:ts clean build:typecheck run:server",
     "dev": "run-s build:ts watch:watch",
-    "watch:watch": "run-p watch:ts watch:type-check watch:serve",
+    "watch:watch": "run-p watch:tailwind watch:ts watch:type-check watch:serve",
     "watch:serve": "node --enable-source-maps ./build/server.js",
     "watch:ts": "nodemon",
     "watch:type-check": "tsc -p tsconfig.json -w",
-    "ts": "nodemon"
+    "ts": "nodemon",
+    "watch:tailwind": "tailwindcss -c ./tailwind.config.cjs -i ./src/tailwind.css -o ./public/tailwind.css --postcss ./postcss.config.cjs  --watch"
   },
   "type": "module",
   "engines": {
@@ -57,6 +59,7 @@
     "npm-run-all": "^4.1.5",
     "postcss": "^8.2.8",
     "prettier": "^2.1.2",
+    "tailwindcss": "^3.1.0",
     "prettier-plugin-svelte": "^2.2.0",
     "typescript": "^4.7.2"
   },
